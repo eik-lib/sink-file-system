@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Sink implementation that persists files on the local file system.",
   "main": "lib/main.js",
+  "types": "types/main.d.ts",
   "type": "module",
   "files": [
     "CHANGELOG.md",
