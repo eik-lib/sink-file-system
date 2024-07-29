@@ -1,0 +1,55 @@
+{
+  "name": "@eik/sink-file-system",
+  "version": "1.0.0",
+  "description": "Sink implementation that persists files on the local file system.",
+  "main": "lib/main.js",
+  "type": "module",
+  "files": [
+    "CHANGELOG.md",
+    "package.json",
+    "README.md",
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "run-s test:*",
+    "test:unit": "tap --disable-coverage --allow-empty-coverage tests/**/*.js",
+    "test:types": "tsc --project tsconfig.test.json",
+    "types": "tsc --declaration --emitDeclarationOnly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eik-lib/sink-file-system.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Trygve Lie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eik-lib/sink-file-system/issues"
+  },
+  "homepage": "https://github.com/eik-lib/sink-file-system#readme",
+  "dependencies": {
+    "@eik/common": "3.0.1",
+    "@eik/sink": "1.2.5",
+    "@metrics/client": "2.5.3",
+    "mime": "3.0.0",
+    "rimraf": "5.0.8"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@types/mime": "3.0.4",
+    "@types/readable-stream": "4.0.15",
+    "eslint": "9.1.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "globals": "15.0.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.3.2",
+    "semantic-release": "24.0.0",
+    "tap": "18.8.0"
+  }
+}
