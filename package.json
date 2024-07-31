@@ -37,7 +37,7 @@
     "@eik/sink": "1.2.5",
     "@metrics/client": "2.5.3",
     "mime": "3.0.0",
-    "rimraf": "5.0.8"
+    "rimraf": "6.0.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
