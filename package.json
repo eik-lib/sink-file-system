@@ -40,8 +40,7 @@
     "rimraf": "5.0.8"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/git": "10.0.1",
+    "@eik/semantic-release-config": "1.0.0",
     "@types/mime": "3.0.4",
     "@types/readable-stream": "4.0.15",
     "eslint": "9.1.1",
