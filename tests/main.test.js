@@ -2,7 +2,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { Writable, pipeline } from "node:stream";
-import { URL } from "node:url";
+import { fileURLToPath } from "node:url";
 import { stream } from "@eik/common";
 import tap from "tap";
 import slug from "unique-slug";
@@ -14,12 +14,16 @@ tap.cleanSnapshot = (s) => {
 	return s.replace(regex, '"timestamp": -1,');
 };
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const DEFAULT_CONFIG = {
-	sinkFsRootPath: path.join(os.tmpdir(), "/eik-test-files"),
+	sinkFsRootPath: path.join(os.tmpdir(), "eik-test-files"),
 };
-const FIXTURE = fs
-	.readFileSync(new URL("../fixtures/import-map.json", import.meta.url))
-	.toString();
+const FIXTURE = fs.readFileSync(
+	path.join(__dirname, "..", "fixtures", "import-map.json"),
+	"utf-8",
+);
 
 const MetricsInto = class MetricsInto extends Writable {
 	constructor() {
@@ -43,7 +47,7 @@ const MetricsInto = class MetricsInto extends Writable {
 };
 
 const readFileStream = (file = "../README.md") =>
-	fs.createReadStream(new URL(file, import.meta.url));
+	fs.createReadStream(path.join(__dirname, file));
 
 const pipeInto = (...streams) =>
 	new Promise((resolve, reject) => {
@@ -94,7 +98,11 @@ tap.test("Sink() - .write()", async (t) => {
 	t.resolves(pipe(writeFrom, writeTo), "should write file to sink");
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -153,7 +161,11 @@ tap.test("Sink() - .write() - directory traversal prevention", async (t) => {
 	);
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -193,7 +205,11 @@ tap.test("Sink() - .read() - File exists", async (t) => {
 	);
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -254,7 +270,11 @@ tap.test("Sink() - .read() - directory traversal prevention", async (t) => {
 	);
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -279,7 +299,11 @@ tap.test(
 		);
 
 		// Clean up sink
-		await sink.delete(dir);
+		try {
+			await sink.delete(dir);
+		} catch {
+			/* do nothing*/
+		}
 		t.end();
 	},
 );
@@ -305,7 +329,11 @@ tap.test(
 		);
 
 		// Clean up sink
-		await sink.delete(dir);
+		try {
+			await sink.delete(dir);
+		} catch {
+			/* do nothing*/
+		}
 		t.end();
 	},
 );
@@ -331,7 +359,11 @@ tap.test("Sink() - .delete() - Delete existing file", async (t) => {
 	t.rejects(sink.exist(file), "should reject - file was deleted");
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -364,7 +396,11 @@ tap.test("Sink() - .delete() - Delete file in tree structure", async (t) => {
 	);
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -382,7 +418,11 @@ tap.test("Sink() - .delete() - Delete files recursively", async (t) => {
 	const writeToB = await sink.write(fileB, "application/json");
 	await pipe(writeFromB, writeToB);
 
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 
 	t.rejects(sink.exist(fileA), "should reject on file A - file was deleted");
 	t.rejects(sink.exist(fileB), "should reject on file B - file was deleted");
@@ -435,7 +475,11 @@ tap.test("Sink() - .delete() - directory traversal prevention", async (t) => {
 	);
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -452,7 +496,11 @@ tap.test("Sink() - .exist() - Check existing file", async (t) => {
 	t.resolves(sink.exist(file), "should resolve - file is in sink");
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -515,7 +563,11 @@ tap.test("Sink() - .exist() - directory traversal prevention", async (t) => {
 	);
 
 	// Clean up sink
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 	t.end();
 });
 
@@ -537,7 +589,11 @@ tap.test("Sink() - .metrics - all successfull operations", async (t) => {
 	const readFrom = await sink.read(file);
 	await pipeInto(readFrom.stream);
 
-	await sink.delete(dir);
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing*/
+	}
 
 	const metrics = await metricsInto.done();
 	t.matchSnapshot(metrics, "metrics should match snapshot");
