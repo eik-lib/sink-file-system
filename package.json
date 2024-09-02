@@ -47,7 +47,7 @@
     "@types/readable-stream": "4.0.15",
     "eslint": "9.8.0",
     "npm-run-all2": "5.0.0",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "rimraf": "6.0.1",
     "semantic-release": "24.0.0",
     "tap": "18.8.0"
