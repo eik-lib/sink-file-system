@@ -46,7 +46,7 @@
     "@types/mime": "3.0.4",
     "@types/readable-stream": "4.0.15",
     "eslint": "9.11.1",
-    "npm-run-all2": "5.0.2",
+    "npm-run-all2": "6.2.4",
     "prettier": "3.3.3",
     "rimraf": "6.0.1",
     "semantic-release": "24.0.0",
