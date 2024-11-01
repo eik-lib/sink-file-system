@@ -44,7 +44,7 @@
     "@eik/prettier-config": "1.0.1",
     "@eik/semantic-release-config": "1.0.0",
     "@types/mime": "3.0.4",
-    "@types/readable-stream": "4.0.15",
+    "@types/readable-stream": "4.0.18",
     "eslint": "9.11.1",
     "npm-run-all2": "5.0.2",
     "prettier": "3.3.3",
