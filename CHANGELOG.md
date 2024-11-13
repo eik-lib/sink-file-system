@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/eik-lib/sink-file-system/compare/v1.0.2...v2.0.0) (2024-11-13)
+
+
+### Bug Fixes
+
+* update dependencies  ([#17](https://github.com/eik-lib/sink-file-system/issues/17)) ([cb7c974](https://github.com/eik-lib/sink-file-system/commit/cb7c974eff940b2a078a4f8263c1f9dcfcf54956))
+
+
+### BREAKING CHANGES
+
+* Requires Node >=20.5.0
+
 ## [1.0.2](https://github.com/eik-lib/sink-file-system/compare/v1.0.1...v1.0.2) (2024-11-13)
 
 
