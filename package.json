@@ -40,7 +40,7 @@
     "mime": "4.0.6"
   },
   "devDependencies": {
-    "@eik/eslint-config": "1.0.5",
+    "@eik/eslint-config": "1.0.7",
     "@eik/prettier-config": "1.0.1",
     "@eik/semantic-release-config": "1.0.0",
     "@types/readable-stream": "4.0.18",
