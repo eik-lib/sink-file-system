@@ -1,3 +1,10 @@
+## [2.0.10](https://github.com/eik-lib/sink-file-system/compare/v2.0.9...v2.0.10) (2025-06-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @metrics/client to v2.5.5 ([#44](https://github.com/eik-lib/sink-file-system/issues/44)) ([7e56ec7](https://github.com/eik-lib/sink-file-system/commit/7e56ec775b2ddbe42e6f21ef03b827d82205f046))
+
 ## [2.0.9](https://github.com/eik-lib/sink-file-system/compare/v2.0.8...v2.0.9) (2025-06-07)
 
 
