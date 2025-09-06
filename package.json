@@ -34,15 +34,15 @@
   },
   "homepage": "https://github.com/eik-lib/sink-file-system#readme",
   "dependencies": {
-    "@eik/common": "5.1.2",
+    "@eik/common": "5.1.6",
     "@eik/sink": "1.2.5",
     "@metrics/client": "2.5.5",
     "mime": "4.0.7"
   },
   "devDependencies": {
-    "@eik/eslint-config": "1.0.16",
+    "@eik/eslint-config": "1.0.21",
     "@eik/prettier-config": "1.0.1",
-    "@eik/semantic-release-config": "1.0.4",
+    "@eik/semantic-release-config": "1.0.8",
     "@types/readable-stream": "4.0.21",
     "eslint": "9.32.0",
     "npm-run-all2": "5.0.2",
