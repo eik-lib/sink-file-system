@@ -40,15 +40,15 @@
     "mime": "4.1.0"
   },
   "devDependencies": {
-    "@eik/eslint-config": "1.0.22",
+    "@eik/eslint-config": "1.0.23",
     "@eik/prettier-config": "1.0.1",
-    "@eik/semantic-release-config": "1.0.8",
+    "@eik/semantic-release-config": "1.0.9",
     "@types/readable-stream": "4.0.21",
-    "eslint": "9.32.0",
-    "npm-run-all2": "5.0.2",
-    "prettier": "3.5.3",
-    "rimraf": "6.0.1",
-    "semantic-release": "24.2.7",
-    "tap": "21.1.0"
+    "eslint": "9.39.1",
+    "npm-run-all2": "8.0.4",
+    "prettier": "3.7.0",
+    "rimraf": "6.1.2",
+    "semantic-release": "25.0.2",
+    "tap": "21.4.0"
   }
 }
