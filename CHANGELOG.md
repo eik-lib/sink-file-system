@@ -1,3 +1,10 @@
+## [2.0.16](https://github.com/eik-lib/sink-file-system/compare/v2.0.15...v2.0.16) (2026-01-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @eik/common to v5.1.13 ([#63](https://github.com/eik-lib/sink-file-system/issues/63)) ([b6221bd](https://github.com/eik-lib/sink-file-system/commit/b6221bd417795b14ccf1de6e85d62589b3b408a6))
+
 ## [2.0.15](https://github.com/eik-lib/sink-file-system/compare/v2.0.14...v2.0.15) (2025-12-19)
 
 
