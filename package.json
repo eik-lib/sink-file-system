@@ -43,7 +43,7 @@
     "@eik/eslint-config": "1.0.23",
     "@eik/prettier-config": "1.0.1",
     "@eik/semantic-release-config": "1.0.11",
-    "@types/readable-stream": "4.0.21",
+    "@types/readable-stream": "4.0.23",
     "eslint": "9.39.1",
     "npm-run-all2": "8.0.4",
     "prettier": "3.7.4",
