@@ -1,3 +1,10 @@
+## [2.0.18](https://github.com/eik-lib/sink-file-system/compare/v2.0.17...v2.0.18) (2026-02-04)
+
+
+### Bug Fixes
+
+* list rimraf as a dependency ([#68](https://github.com/eik-lib/sink-file-system/issues/68)) ([e884b89](https://github.com/eik-lib/sink-file-system/commit/e884b8900b918486708b4e3481ba0d12111bd577))
+
 ## [2.0.17](https://github.com/eik-lib/sink-file-system/compare/v2.0.16...v2.0.17) (2026-02-04)
 
 
