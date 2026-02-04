@@ -1,3 +1,10 @@
+## [2.0.17](https://github.com/eik-lib/sink-file-system/compare/v2.0.16...v2.0.17) (2026-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update eik packages ([#67](https://github.com/eik-lib/sink-file-system/issues/67)) ([ce29371](https://github.com/eik-lib/sink-file-system/commit/ce29371e0c4028074c62ac8f2f711a9ed391cc26))
+
 ## [2.0.16](https://github.com/eik-lib/sink-file-system/compare/v2.0.15...v2.0.16) (2026-01-07)
 
 
