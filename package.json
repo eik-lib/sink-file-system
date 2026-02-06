@@ -1,6 +1,6 @@
 {
   "name": "@eik/sink-file-system",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "description": "Sink implementation that persists files on the local file system.",
   "main": "lib/main.js",
   "types": "types/main.d.ts",
