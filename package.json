@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/eik-lib/sink-file-system#readme",
   "dependencies": {
-    "@eik/common": "5.1.17",
+    "@eik/common": "5.1.18",
     "@eik/sink": "1.2.5",
     "@metrics/client": "2.5.5",
     "mime": "4.1.0",
