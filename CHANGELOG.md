@@ -1,3 +1,10 @@
+## [2.0.24](https://github.com/eik-lib/sink-file-system/compare/v2.0.23...v2.0.24) (2026-02-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rimraf to v6.1.3 ([#74](https://github.com/eik-lib/sink-file-system/issues/74)) ([62c80d9](https://github.com/eik-lib/sink-file-system/commit/62c80d900aede7a8276ca7b69787dd20800fb258))
+
 ## [2.0.23](https://github.com/eik-lib/sink-file-system/compare/v2.0.22...v2.0.23) (2026-02-15)
 
 
