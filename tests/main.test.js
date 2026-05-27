@@ -5,7 +5,8 @@ import { Writable, pipeline } from "node:stream";
 import { fileURLToPath } from "node:url";
 import { stream } from "@eik/common";
 import tap from "tap";
-import slug from "unique-slug";
+import { randomBytes } from "node:crypto";
+const slug = () => randomBytes(4).toString("hex");
 import Sink from "../lib/main.js";
 
 // Ignore the value for "timestamp" field in the snapshots
