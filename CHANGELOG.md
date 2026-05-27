@@ -1,3 +1,10 @@
+## [2.0.33](https://github.com/eik-lib/sink-file-system/compare/v2.0.32...v2.0.33) (2026-05-27)
+
+
+### Bug Fixes
+
+* Bumped dependencies ([74b364c](https://github.com/eik-lib/sink-file-system/commit/74b364c9c49158f03409218e9f1121252a6b3404))
+
 ## [2.0.32](https://github.com/eik-lib/sink-file-system/compare/v2.0.31...v2.0.32) (2026-05-22)
 
 
