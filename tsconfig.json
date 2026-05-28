@@ -10,7 +10,8 @@
     "declaration": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "types"
+    "outDir": "types",
+    "rootDir": "./lib"
   },
   "include": ["./lib/**/*.js"]
 }
