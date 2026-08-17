@@ -1,3 +1,10 @@
+## [2.0.41](https://github.com/eik-lib/sink-file-system/compare/v2.0.40...v2.0.41) (2026-08-17)
+
+
+### Bug Fixes
+
+* correct exist() metrics counter and ensure rejection is always an Error ([25e1874](https://github.com/eik-lib/sink-file-system/commit/25e187429b469d03bff7396fdcee30e5eb4da6a9))
+
 ## [2.0.40](https://github.com/eik-lib/sink-file-system/compare/v2.0.39...v2.0.40) (2026-06-20)
 
 
