@@ -657,3 +657,85 @@ test("Sink() - .exist() - does not record success when file does not exist", asy
 		"success label must not be true when the file does not exist",
 	);
 });
+
+// Regression tests for write() options and partial file cleanup (#10)
+
+test("Sink() - .write() - destroyed stream does not leave a partial file (#10)", async () => {
+	// Regression (#10): fs.createWriteStream() created and truncated the
+	// target file on open. Destroying the stream mid-write left an empty
+	// file at the target path. With the temp-file + rename pattern the
+	// final path is only created on a clean finish.
+	const sink = new Sink(DEFAULT_CONFIG);
+	const dir = slug();
+	const file = `${dir}/partial.txt`;
+
+	const stream = await sink.write(file, "text/plain");
+	// Destroy without writing anything — simulates an aborted upload.
+	stream.destroy();
+
+	// Give the async cleanup a tick to run.
+	await new Promise((resolve) => setImmediate(resolve));
+
+	await assert.rejects(
+		sink.exist(file),
+		"destroyed write must not leave a partial file at the target path",
+	);
+
+	// Clean up directory if it was created.
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing */
+	}
+});
+
+test("Sink() - .write() - ifNotExists rejects when file already exists", async () => {
+	const sink = new Sink(DEFAULT_CONFIG);
+	const dir = slug();
+	const file = `${dir}/once.txt`;
+
+	const w1 = await sink.write(file, "text/plain");
+	await pipe(readFileStream("../fixtures/import-map.json"), w1);
+
+	await assert.rejects(
+		async () => {
+			const w2 = await sink.write(file, "text/plain", {
+				ifNotExists: true,
+			});
+			await pipe(readFileStream("../fixtures/import-map.json"), w2);
+		},
+		(err) => {
+			assert.strictEqual(
+				/** @type {any} */ (err).code,
+				"ALREADY_EXISTS",
+				"should reject with ALREADY_EXISTS when file already exists",
+			);
+			return true;
+		},
+	);
+
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing */
+	}
+});
+
+test("Sink() - .write() - ifNotExists succeeds when file does not exist", async () => {
+	const sink = new Sink(DEFAULT_CONFIG);
+	const dir = slug();
+	const file = `${dir}/new.txt`;
+
+	const w = await sink.write(file, "text/plain", { ifNotExists: true });
+	await assert.doesNotReject(
+		pipe(readFileStream("../fixtures/import-map.json"), w),
+		"ifNotExists should succeed when file does not yet exist",
+	);
+	await assert.doesNotReject(sink.exist(file));
+
+	try {
+		await sink.delete(dir);
+	} catch {
+		/* do nothing */
+	}
+});
