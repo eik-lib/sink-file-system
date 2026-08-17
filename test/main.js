@@ -597,3 +597,63 @@ test("Sink() - .metrics - all successfull operations", async (t) => {
 	const cleaned = metrics.replace(RE_TIMESTAMP, '"timestamp": -1,');
 	t.assert.snapshot(cleaned);
 });
+
+test("Sink() - .exist() - rejects with an Error instance when path is not a regular file", async () => {
+	// Regression: exist() called reject() with no argument when fs.stat
+	// succeeded but the path was not a regular file (e.g. a directory),
+	// producing undefined as the rejection reason. Callers accessing
+	// error.message would throw a TypeError.
+	const sink = new Sink(DEFAULT_CONFIG);
+
+	// Ensure the sink root exists as a directory to use as the test path.
+	fs.mkdirSync(DEFAULT_CONFIG.sinkFsRootPath, { recursive: true });
+
+	await assert.rejects(
+		// Pass the sink root itself — it exists but is a directory, not a file.
+		sink.exist("/"),
+		(err) => {
+			assert.ok(
+				err instanceof Error,
+				"rejection must be an Error instance, not undefined",
+			);
+			assert.ok(
+				err.message.length > 0,
+				"Error must have a non-empty message",
+			);
+			return true;
+		},
+		"should reject with an Error instance when path is a directory",
+	);
+});
+
+test("Sink() - .exist() - does not record success when file does not exist", async () => {
+	// Regression: the metrics counter was incremented with { success: true }
+	// unconditionally before branching on the stat result, so a missing-file
+	// rejection was counted as a successful access.
+	const sink = new Sink(DEFAULT_CONFIG);
+
+	const metricsInto = new MetricsInto();
+	sink.metrics.pipe(metricsInto);
+
+	// Attempt to check a file that does not exist (should reject).
+	await assert.rejects(sink.exist("/bar/foo/not-exist.json"));
+
+	const metrics = JSON.parse(await metricsInto.done());
+	const existEntry = metrics.find((/** @type {any} */ m) =>
+		m.labels?.some(
+			(/** @type {any} */ l) =>
+				l.name === "operation" && l.value === "exist",
+		),
+	);
+
+	assert.ok(
+		existEntry,
+		"should have a metrics entry for the exist operation",
+	);
+	assert.notEqual(
+		existEntry.labels?.find((/** @type {any} */ l) => l.name === "success")
+			?.value,
+		true,
+		"success label must not be true when the file does not exist",
+	);
+});
