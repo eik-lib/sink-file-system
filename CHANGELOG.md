@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/eik-lib/sink-file-system/compare/v2.1.0...v2.2.0) (2026-08-20)
+
+
+### Features
+
+* revert to pre-atomic-write implementation ([f76adc1](https://github.com/eik-lib/sink-file-system/commit/f76adc1df2f22cefd84c8aa64dfba4e0589bf9fe))
+
 ## [2.0.39](https://github.com/eik-lib/sink-file-system/compare/v2.0.38...v2.0.39) (2026-06-10)
 
 
