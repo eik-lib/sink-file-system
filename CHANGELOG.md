@@ -1,24 +1,3 @@
-# [2.1.0](https://github.com/eik-lib/sink-file-system/compare/v2.0.41...v2.1.0) (2026-08-19)
-
-
-### Features
-
-* atomic writes via temp-file pattern and write() options ([c3d3e64](https://github.com/eik-lib/sink-file-system/commit/c3d3e6454cd0ed9d39127ea8e3aba8570bf93799)), closes [#10](https://github.com/eik-lib/sink-file-system/issues/10)
-
-## [2.0.41](https://github.com/eik-lib/sink-file-system/compare/v2.0.40...v2.0.41) (2026-08-17)
-
-
-### Bug Fixes
-
-* correct exist() metrics counter and ensure rejection is always an Error ([25e1874](https://github.com/eik-lib/sink-file-system/commit/25e187429b469d03bff7396fdcee30e5eb4da6a9))
-
-## [2.0.40](https://github.com/eik-lib/sink-file-system/compare/v2.0.39...v2.0.40) (2026-06-20)
-
-
-### Bug Fixes
-
-* **deps:** update eik packages ([#98](https://github.com/eik-lib/sink-file-system/issues/98)) ([9a02dd1](https://github.com/eik-lib/sink-file-system/commit/9a02dd1382ed39e97beb6bf40cf74a907aad7f0e))
-
 ## [2.0.39](https://github.com/eik-lib/sink-file-system/compare/v2.0.38...v2.0.39) (2026-06-10)
 
 
