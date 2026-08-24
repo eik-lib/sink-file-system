@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/eik-lib/sink-file-system/compare/v2.2.0...v2.3.0) (2026-08-24)
+
+
+### Features
+
+* accept optional options parameter in write() ([9064099](https://github.com/eik-lib/sink-file-system/commit/906409925f208f9f893bbac81888868dbe943a9f))
+
 # [2.2.0](https://github.com/eik-lib/sink-file-system/compare/v2.1.0...v2.2.0) (2026-08-20)
 
 
