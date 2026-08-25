@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/eik-lib/sink-file-system/compare/v2.3.0...v2.4.0) (2026-08-25)
+
+
+### Bug Fixes
+
+* add [@ts-ignore](https://github.com/ts-ignore) for intentional invalid-type test arguments ([b6d1a93](https://github.com/eik-lib/sink-file-system/commit/b6d1a9363edd767e5998fc5f6d6c5ee8689887f7))
+
+
+### Features
+
+* add writeBuffer() and readBuffer() methods ([3d5cf2f](https://github.com/eik-lib/sink-file-system/commit/3d5cf2f4c376a4a8372361a1aaf4f3b7debcedda))
+
 # [2.3.0](https://github.com/eik-lib/sink-file-system/compare/v2.2.0...v2.3.0) (2026-08-24)
 
 
