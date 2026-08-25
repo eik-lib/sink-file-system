@@ -616,10 +616,12 @@ test("Sink() - .writeBuffer() - should write and read back a buffer", async () =
 test("Sink() - .writeBuffer() - arguments is illegal", async () => {
 	const sink = new Sink();
 	await assert.rejects(
+		// @ts-ignore
 		sink.writeBuffer(300, "application/json", Buffer.from("x")),
 		RE_ILLEGAL_FILE_PATH,
 	);
 	await assert.rejects(
+		// @ts-ignore
 		sink.writeBuffer("/valid/path.js", 300, Buffer.from("x")),
 		RE_ILLEGAL_CONTENT_TYPE,
 	);
