@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/eik-lib/sink-file-system/compare/v2.4.0...v2.4.1) (2026-10-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mime to v4.1.1 ([#116](https://github.com/eik-lib/sink-file-system/issues/116)) ([d29ccef](https://github.com/eik-lib/sink-file-system/commit/d29ccef4f21851d3ed2f94dab56c3122145fa3bf))
+
 # [2.4.0](https://github.com/eik-lib/sink-file-system/compare/v2.3.0...v2.4.0) (2026-08-25)
 
 
